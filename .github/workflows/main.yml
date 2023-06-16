@@ -1,0 +1,20 @@
+name: ci
+on:
+ push: 
+  branches: [ "main" ]
+ pull_request: 
+  branches: [ "main" ]
+  
+  job:
+   build:
+    run-on: ubuntu-latest
+    
+    steps:
+    - uses: action/checkout@v3
+    - name: run one line job
+     run: echo, hello world
+     - name: run multi line job
+     run: |
+      echo hi,add one more
+      echo add tow more job
+      
